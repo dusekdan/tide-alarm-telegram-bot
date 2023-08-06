@@ -68,9 +68,7 @@ class TideTable:
             raise Exception(f"{date} is not present in the tide info fetched from {self.api_url} for {name}")
         tide_info_for_date = tide_info_for_date[0]
 
-        response = self._map_to_tide_info_for_date(tide_info_for_date)
-
-        print(response)
+        return self._map_to_tide_info_for_date(tide_info_for_date)
 
     def _map_to_tide_info_for_date(self, t):
         tides = [TideInfo(timestamp=i["timestamp"], height=i["height"], type=TideType.LOW if i["type"] == "low" else TideType.HIGH) for i in t["tides"]]
