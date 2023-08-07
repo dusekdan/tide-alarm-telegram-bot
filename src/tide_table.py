@@ -22,16 +22,16 @@ class TideTable:
         Obtains Tide information for a specific date (defaults to today).
 
         Args:
-            bounding_box (List[str]): bounding box descriptive of the area
-             for which we want to obtain the tide info. Provide 4 GPS coords
-             that describe the corners of the area.
-            name (str): name of the location, this value is present in the API
-             response, and you have to provide the same value as is provided
-             by the API. Example uses "Dublin".
-            date (str): Date in `yyyy-mm-dd` format to obtain tide data for.
+            `bounding_box` (`List[str]`): bounding box descriptive of the area
+              for which we want to obtain the tide info. Provide 4 GPS coords
+              that describe the corners of the area.
+            `name` (`str`): name of the location, this value is present in the 
+              API response, and you have to provide the same value as is provided
+              by the API. Example uses `"Dublin"`.
+            `date` (`str`): Date in `yyyy-mm-dd` format to obtain tide data for.
 
         Returns:
-            TideInfoForDate: Information about tides for day and location.
+            `TideInfoForDate`: Information about tides for day and location.
         """
         if bounding_box is None:
             raise Exception(
